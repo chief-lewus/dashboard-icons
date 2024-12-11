@@ -1,0 +1,26 @@
+   name: Sync to GitLab
+
+   on:
+     push:
+       branches:
+         - main  # Change this to your default branch if different
+
+   jobs:
+     sync:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout code
+           uses: actions/checkout@v2
+
+         - name: Set up Git
+           run: |
+             git config --global user.name "Jarrett"
+             git config --global user.email "jarrett.luker@lukerlab.io"
+
+         - name: Push to GitLab
+           env:
+             GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}  # Add your GitLab token to GitHub secrets
+           run: |
+             git remote add gitlab git@gitcraft.lukerlab.io:chieflewus/dashboard-icons.git
+             git push gitlab main  # Change 'main' to your branch if different
