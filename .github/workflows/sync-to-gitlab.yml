@@ -22,5 +22,5 @@
            env:
              GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}  # Add your GitLab token to GitHub secrets
            run: |
-             git remote add gitlab https://gitcraft.lukerlab.io/chieflewus/dashboard-icons.git
+             git remote add gitlab git@gitcraft.lukerlab.io:chieflewus/dashboard-icons.git
              git push gitlab main  # Change 'main' to your branch if different
