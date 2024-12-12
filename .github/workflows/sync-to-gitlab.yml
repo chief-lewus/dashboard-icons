@@ -15,7 +15,7 @@
 
          - name: Set up Git
            run: |
-             git config --global user.name "Jarrett"
+             git config --global user.name "chieflewus"
              git config --global user.email "jarrett.luker@lukerlab.io"
 
          - name: Push to GitLab
